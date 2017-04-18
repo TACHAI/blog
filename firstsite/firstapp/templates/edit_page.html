@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑</title>
+</head>
+<body>
+<form action="{% url 'firstapp:edit_action'%}" method="post">{% csrf_token %}
+    <!-- 下面一句是安全性的措施 什么跨站请求伪造 用post需要-->
+    <label>文章标题
+       <input type="text" name="title"/>
+    </label>
+    <br/>
+    <label>文章内容
+         <input type="text" name="content"/>
+    </label>
+    <br/>
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>
